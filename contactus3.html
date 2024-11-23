@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {  
+            font-family: Arial, sans-serif;
+            background-color: #eeeeee;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            height:500px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form {
+            flex: 1;
+            margin-right: 20px;
+            min-width: 280px;
+        }
+
+        .contact-info {
+            flex: 1;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 250px;
+        }
+
+        .contact-image {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #8f1212;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a91d1d;
+        }
+
+        /* Success Message Style */
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            margin: 50px;
+            padding: 40px;
+            background-color: #ffff;
+            color: #8f1212;
+            border-left: 5px solid #4a0909;
+            border-radius: 4px;
+            font-size: 1rem;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Contact Us</h1>
+
+    <div class="container">
+        <!-- Contact Info Section -->
+        <div class="contact-info">
+            <img src="contactusimg.png" alt="Contact Us Image" class="contact-image">
+            <h2>Our Office</h2>
+            <br>
+            <p><strong>Address:</strong><br> #1-8-303/48/9, Tirumala Chambers, Penderghast Road, Sindhi Colony, Begumpet, Hyderabad, Telangana-500016.</p>
+            <br>
+            <p><strong>Contact Us:</strong> <br>+91 8121002480</p>
+            <br>
+            <p><strong>Email:</strong> <br>Contact@Stridetele.com</p>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="contact-form">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="e74e4d94-9e25-4d01-b8c8-ab988b04222d">
+                <input type="hidden" name="redirect" value="">
+
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                
+                <label for="subject">Subject *</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message Section -->
+    <div class="success-message" id="success-message">
+        😊 Thank you! Your application has been submitted successfully.
+    </div>
+
+    <script>
+        // Form submission with Web3Forms
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                // Display the success message after the container
+                successMessage.style.display = 'block';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    form.reset();
+                }, 3000);
+            } else {
+                alert('Failed to submit the form. Please try again.');
+            }
+        });
+    </script>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Footer Example</title>
+        <style>
+            /* Basic Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+    
+            /* Footer Styling */
+            footer {
+                background-color: #8f1212;
+                color: #fff;
+                text-align: center;
+                padding:8px;
+                margin-top: auto; /* Makes footer stick to the bottom */
+                margin-bottom: 0px;
+            }
+    
+            footer p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+    
+            /* Responsive Design */
+            @media (max-width: 600px) {
+                footer p {
+                    font-size: 0.9rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+    
+        <!-- Your website content here -->
+    
+        <footer>
+            <p>2008 Stride Telesoft Consultancy | All rights reserved</p>
+        </footer>
+    </body>
+    </html>
+    
+</body>
+</html>

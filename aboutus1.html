@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            width: 80%;
+            height: 520px;
+            margin: 0 auto;
+            background-image: url('aboutus.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+
+        .about-content {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            color: #34495e;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            text-align: justify;
+        }
+
+        .values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .value {
+            flex: 1 1 calc(13.33% - 10px); /* Three boxes in one row for big screens */
+            max-width: 32%;
+            padding: 20px;
+            background-color: #8f1212;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .value h3 {
+            font-size: 1.5rem;
+            color: #edeff2;
+            margin-bottom: 10px;
+        }
+
+        .value p {
+            color: #fbfbfb;
+            font-size: 1rem;
+            padding: 14px;
+            text-align: justify;
+        }
+
+        .footer {
+            background-color: #eaeaea;
+            color: #000;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .values {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .value {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            .header {
+            width: 95%;
+            height: 220px;
+            margin: 0 auto;
+            background-image: url('aboutus.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <!-- Add content inside header if needed, such as a title or slogan -->
+    </header>
+
+    <div class="container">
+        <div class="about-content">
+            <h2>Our Company</h2>
+            <p>Stride Telesoft Consultancy was founded in 2008 to provide quality services to the Telecom sector both in India and abroad. Our promoters bring over 35 years of experience in the Telecom domain, having worked at key management positions in MNCs across various fields such as Wireless Network Designing, Spectrum Management, System Installation & Commissioning, Customer Quality Management, and Project Management for Wireless and Backhaul systems (Fibre & MW).</p>
+            <p>Stride has built a reputation for itself as a quality Telecom services provider in India, serving multiple clients in the Railways, Wireless Telecom, and IT domains. We are now expanding our business operations to serve customers in Data Centres, IT Security & Surveillance, and Geospatial Services.</p>
+        </div>
+
+        <div class="values">
+            <div class="value">
+                <h3>Expertise in Telecom</h3>
+                <p>With over 35 years of experience in Wireless Network Designing, Spectrum Management, and Telecom system installation, Stride has become a leading service provider in the telecom industry in India and abroad.</p>
+            </div>
+            <div class="value">
+                <h3>Quality Services</h3>
+                <p>Our commitment to providing high-quality services has built our reputation as a trusted telecom services provider, ensuring the best outcomes for our clients in the Railways, Wireless Telecom, and IT sectors.</p>
+            </div>
+            <div class="value">
+                <h3>Expanding Horizons</h3>
+                <p>Stride is expanding its operations to serve clients in emerging fields such as Data Centres, IT Security & Surveillance, and Geospatial services, ensuring growth in innovative sectors that meet modern demands.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2008 Stride Telesoft Consultancy. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
